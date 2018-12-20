@@ -2,7 +2,7 @@
 # react-native-safe-image
 Really light React-Native package to handle fallback when image is on error
 
-# How to use it ?
+## How to use it ?
 ```ts
 import { SafeImage } from 'react-native-safe-image'
 
