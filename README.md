@@ -8,10 +8,12 @@ import { SafeImage } from 'react-native-safe-image'
 
 // ...
 render() {
-  return <SafeImage
-            source={{ uri: 'http://urlToImageFallback.jpg' }}
-            style={{ width: 30, height: 30 }}
-            resizeMode="contain"
-        />
+  return (
+    <SafeImage
+      source={{ uri: 'http://urlToImageFallback.jpg' }}
+      style={{ width: 30, height: 30 }}
+      resizeMode="contain"
+    />
+  )
 }
 ```
