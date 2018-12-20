@@ -1,35 +1,29 @@
 import React, { Component } from 'react'
-import { Image } from 'react-native'
+import { Image, ImageProps } from 'react-native'
 
-interface Props {
-  uri: string
+interface IProps extends ImageProps {
   fallbackImage?: string
 }
 
-interface State {
+interface IState {
   renderImageFail: boolean
 }
 
-export class SafeImage extends Component<Props, State> {
-  state = {
-    renderImageFail: false
+export class SafeImage extends Component<IProps, IState> {
+  state = { renderImageFail: false }
+  handleOnError = () => this.setState({ renderImageFail: true })
+  componentDidUpdate() {
+    this.setState({ renderImageFail: false })
   }
   render() {
-    const { fallbackImage, uri, ...imageProps } = this.props
+    const { fallbackImage, ...imageProps } = this.props
     const { renderImageFail } = this.state
     if (renderImageFail) {
       if (fallbackImage) {
-        return <Image source={{ uri: fallbackImage }} {...imageProps} />
+        return <Image {...imageProps} source={{ uri: fallbackImage }} />
       }
       return null
     }
-
-    return (
-      <Image
-        source={{ uri }}
-        {...imageProps}
-        onError={() => this.setState({ renderImageFail: true })}
-      />
-    )
+    return <Image {...imageProps} onError={this.handleOnError} />
   }
 }
