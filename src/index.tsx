@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { Image, ImageProps, ImageSourcePropType } from 'react-native'
 
-interface IProps extends ImageProps {
+export interface SafeImageProps extends ImageProps {
   fallbackImageSource?: ImageSourcePropType
 }
 
-interface IState {
+interface State {
   renderImageFail: boolean
 }
 
-export class SafeImage extends Component<IProps, IState> {
+export class SafeImage extends Component<SafeImageProps, State> {
   state = { renderImageFail: false }
   handleOnError = () => this.setState({ renderImageFail: true })
   componentDidUpdate() {
