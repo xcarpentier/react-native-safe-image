@@ -1,6 +1,6 @@
 {
   "name": "react-native-safe-image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Really light React-Native package to handle fallback when image is on error",
   "repository": {
     "type": "git",
