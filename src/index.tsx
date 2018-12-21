@@ -12,9 +12,6 @@ interface State {
 export class SafeImage extends Component<SafeImageProps, State> {
   state = { renderImageFail: false }
   handleOnError = () => this.setState({ renderImageFail: true })
-  componentDidUpdate() {
-    this.setState({ renderImageFail: false })
-  }
   render() {
     const { fallbackImageSource, ...imageProps } = this.props
     const { renderImageFail } = this.state
