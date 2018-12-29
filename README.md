@@ -21,3 +21,6 @@ render() {
   )
 }
 ```
+
+## Todos
+- [] add `fallbackComponent` prop
