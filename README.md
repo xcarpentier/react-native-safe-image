@@ -23,4 +23,4 @@ render() {
 ```
 
 ## Todos
-- [] add `fallbackComponent` prop
+- [ ] add `fallbackComponent` prop
