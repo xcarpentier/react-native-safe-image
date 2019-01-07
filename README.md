@@ -21,11 +21,12 @@ render() {
   )
 }
 // ... or ...
+const noImg = <View><Text>No Img</Text></View>
 render() {
   return (
     <SafeImage
       source={{ uri: 'http://Normal-Image-Maybe-OnError.jpg' }}
-      fallbackComponent={<View><Text>No Img</Text></View>}
+      fallbackComponent={noImg}
       style={{ width: 30, height: 30 }}
       resizeMode="contain"
     />
