@@ -20,6 +20,18 @@ render() {
     />
   )
 }
+// ... or ...
+render() {
+  return (
+    <SafeImage
+      source={{ uri: 'http://Normal-Image-Maybe-OnError.jpg' }}
+      fallbackComponent={<View><Text>No Img</Text></View>}
+      style={{ width: 30, height: 30 }}
+      resizeMode="contain"
+    />
+  )
+}
+
 ```
 
 ## Todos
