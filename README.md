@@ -3,6 +3,7 @@
 # react-native-safe-image
 
 Really light React-Native package to handle fallback when image is on error
+
 - fallback to **other image**
 - fallback to **a component**
 
