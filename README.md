@@ -6,7 +6,7 @@ Really light React-Native package to handle fallback when image is on error
 
 ## How to use it ?
 
-```ts
+```jsx
 import { SafeImage } from 'react-native-safe-image'
 
 // ...
