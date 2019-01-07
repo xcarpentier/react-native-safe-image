@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, ReactNode } from 'react'
 import { Image, ImageProps, ImageSourcePropType } from 'react-native'
 
 export interface SafeImageProps extends ImageProps {
   fallbackImageSource?: ImageSourcePropType
+  fallbackComponent?: ReactNode
 }
 
 interface State {
@@ -13,11 +14,14 @@ export class SafeImage extends Component<SafeImageProps, State> {
   state = { renderImageFail: false }
   handleOnError = () => this.setState({ renderImageFail: true })
   render() {
-    const { fallbackImageSource, ...imageProps } = this.props
+    const { fallbackImageSource, fallbackComponent, ...imageProps } = this.props
     const { renderImageFail } = this.state
     if (renderImageFail) {
       if (fallbackImageSource) {
         return <Image {...imageProps} source={fallbackImageSource} />
+      }
+      if (fallbackComponent) {
+        return fallbackComponent
       }
       return null
     }
