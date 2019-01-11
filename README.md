@@ -8,6 +8,7 @@ Really light React-Native package to handle fallback when image is on error
 - fallback to **a component**
 
 ## How to use it ?
+`yarn add react-native-safe-image`
 
 ```jsx
 import { SafeImage } from 'react-native-safe-image'
