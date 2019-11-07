@@ -20,7 +20,7 @@ export class SafeImage extends Component<SafeImageProps, State> {
   componentDidUpdate(previousProps: SafeImageProps) {
     const previousUri = (previousProps.source as ImageURISource).uri
     const actualUri = (this.props.source as ImageURISource).uri
-    if (previousUri && actualUri && previousUri !== actualUri) {
+    if (previousUri !== actualUri) {
       this.setState({ renderImageFail: false })
     }
   }
